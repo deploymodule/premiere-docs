@@ -50,8 +50,19 @@ Three export engines can work together in a single pipeline. See [Export Engines
 **FCP XML**
 :   Final Cut Pro XML files generated for import into DaVinci Resolve or other color grading applications. See [FCP XML & Output](fcp-xml.md).
 
+## Third-Party Requirements
+
+The FFmpeg and REDLINE engines require external tools installed on your system:
+
+!!! warning "Install before use"
+    - **FFmpeg** must be installed to use the FFmpeg trim engine — [installation guide](prerequisites.md#ffmpeg)
+    - **REDCINE-X PRO** must be installed to use the REDLINE engine — [installation guide](prerequisites.md#redcine-x-pro-redline)
+
+    Adobe Media Encoder (AME) is built into your Adobe subscription and requires no additional installation.
+
 ## Sections
 
+- [Prerequisites](prerequisites.md) — installing FFmpeg and REDCINE-X PRO
 - [Setup & Scanning](setup.md) — configuration, settings modal, and the scan process
 - [Export Engines](export-engines.md) — REDLINE, FFmpeg, and AME
 - [FCP XML & Output](fcp-xml.md) — XML generation and output folder structure

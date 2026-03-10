@@ -1,6 +1,6 @@
-site_name: Scrub
+site_name: Deploy: Premiere Pro Plugins
 site_url: https://deploymodule.github.io/premiere-docs
-site_description: Documentation for Scrub — a UXP plugin suite for Adobe Premiere Pro
+site_description: Professional UXP plugins for Adobe Premiere Pro by DeployModule
 site_author: DeployModule
 
 repo_url: https://github.com/DeployModule/premiere-docs
@@ -71,6 +71,7 @@ nav:
       - Organize Tab: scrub/template/organize-tab.md
     - Conform:
       - scrub/conform/index.md
+      - Prerequisites: scrub/conform/prerequisites.md
       - Setup & Scanning: scrub/conform/setup.md
       - Export Engines: scrub/conform/export-engines.md
       - FCP XML & Output: scrub/conform/fcp-xml.md

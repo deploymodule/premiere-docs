@@ -6,6 +6,9 @@ The Conform module supports three export engines that can work independently or 
 
 **Purpose:** Debayer and export R3D (RED camera RAW) clips.
 
+!!! warning "Requires REDCINE-X PRO"
+    REDline is included with REDCINE-X PRO, which must be downloaded and installed from [red.com/downloads](https://www.red.com/downloads). See the [Prerequisites guide](prerequisites.md#redcine-x-pro-redline) for step-by-step instructions.
+
 ### Configuration
 
 | Setting | Description |
@@ -41,6 +44,9 @@ If auto-detection fails, click **Browse** to locate the executable manually.
 ## FFmpeg
 
 **Purpose:** Trim clips by extracting the used portion with handles. Supports two modes.
+
+!!! warning "Requires FFmpeg"
+    FFmpeg is a free, open-source tool that must be installed separately. See the [Prerequisites guide](prerequisites.md#ffmpeg) for installation instructions on macOS and Windows.
 
 ### Configuration
 
