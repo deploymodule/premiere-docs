@@ -1,0 +1,123 @@
+site_name: Deploy Premiere
+site_url: https://deploymodule.github.io/premiere-docs
+site_description: Documentation for Scrub — a UXP plugin suite for Adobe Premiere Pro
+site_author: DeployModule
+
+repo_url: https://github.com/DeployModule/premiere-docs
+repo_name: DeployModule/premiere-docs
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: light blue
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  font:
+    text: Inter
+    code: JetBrains Mono
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.copy
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - getting-started/index.md
+    - Installation: getting-started/installation.md
+    - Quick Start: getting-started/quick-start.md
+  - Scrub:
+    - scrub/index.md
+    - Deliverables:
+      - scrub/deliverables/index.md
+      - Delivery Presets: scrub/deliverables/delivery-presets.md
+      - Export Configurations: scrub/deliverables/export-configs.md
+      - Track Selection: scrub/deliverables/track-selection.md
+      - Output Settings: scrub/deliverables/output-settings.md
+      - Settings: scrub/deliverables/settings.md
+    - Replace:
+      - scrub/replace/index.md
+      - Replacement Map: scrub/replace/replacement-map.md
+      - Sequence Selection: scrub/replace/sequence-selection.md
+      - Execution Modes: scrub/replace/execution-modes.md
+      - Results & Reports: scrub/replace/reports.md
+    - Template:
+      - scrub/template/index.md
+      - Create Tab: scrub/template/create-tab.md
+      - Rename Tab: scrub/template/rename-tab.md
+      - Naming Presets: scrub/template/naming-presets.md
+      - Organize Tab: scrub/template/organize-tab.md
+    - Conform:
+      - scrub/conform/index.md
+      - Setup & Scanning: scrub/conform/setup.md
+      - Export Engines: scrub/conform/export-engines.md
+      - FCP XML & Output: scrub/conform/fcp-xml.md
+    - Global Settings: scrub/global-settings.md
+  - Troubleshooting:
+    - troubleshooting/index.md
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/DeployModule
+  generator: false
+
+copyright: "&copy; 2026 DeployModule"
