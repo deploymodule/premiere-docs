@@ -39,6 +39,35 @@ ffmpeg -version
 
 You should see version info starting with `ffmpeg version 7.x...`.
 
+#### macOS Gatekeeper Warning
+
+macOS may block FFmpeg when Scrub tries to call it from the command line, even if you can run it yourself in Terminal. This happens when the binary carries a quarantine flag from the download.
+
+**Fix — run this once in Terminal:**
+
+```bash
+# Intel Mac (Homebrew default)
+xattr -d com.apple.quarantine /usr/local/bin/ffmpeg
+
+# Apple Silicon (Homebrew default)
+xattr -d com.apple.quarantine /opt/homebrew/bin/ffmpeg
+```
+
+If you installed FFmpeg manually to a different location, replace the path with wherever your `ffmpeg` binary lives. You can find it with:
+
+```bash
+which ffmpeg
+```
+
+Then run:
+
+```bash
+xattr -d com.apple.quarantine $(which ffmpeg)
+```
+
+!!! note
+    FFmpeg installed via Homebrew usually doesn't need this — Homebrew strips the quarantine flag automatically. You're most likely to hit this if you downloaded a pre-built binary from ffmpeg.org manually.
+
 ---
 
 ### Install on Windows
@@ -119,6 +148,29 @@ REDline will be located at:
 ```bash
 "/Applications/REDCINE-X Professional/REDCINE-X PRO.app/Contents/MacOS/REDline" --version
 ```
+
+#### macOS Gatekeeper Warning
+
+Even if REDCINE-X PRO opens fine, macOS may still block the **REDline binary** when Scrub tries to call it from the command line. This is a separate Gatekeeper restriction — the app and its internal binaries each carry their own quarantine flag.
+
+**Fix — run this once in Terminal:**
+
+```bash
+xattr -dr com.apple.quarantine "/Applications/REDCINE-X Professional/REDCINE-X PRO.app"
+```
+
+The `-dr` flags recursively remove the quarantine attribute from the entire app bundle, including REDline. After running this, Scrub can call REDline without macOS blocking it.
+
+If you're unsure of the install path, you can find it with:
+
+```bash
+find /Applications -name "REDline" 2>/dev/null
+```
+
+Then substitute that path into the `xattr` command above.
+
+!!! note
+    If REDCINE-X PRO itself was also blocked when you first opened it, you may need to allow it in **System Settings → Privacy & Security → Allow Anyway** before the `xattr` command will fully take effect.
 
 ---
 
