@@ -16,9 +16,9 @@ Professional UXP plugins for Adobe Premiere Pro — built for editors, agencies,
 
 ---
 
-## What is Deploy?
+## What are these plugins?
 
-Deploy is a collection of UXP plugins for Adobe Premiere Pro, developed by [DeployModule](https://github.com/DeployModule). Each plugin targets a specific area of post-production and is designed to work the way editors actually work — fast, configurable, and without unnecessary friction.
+These are a collection of UXP plugins for Adobe Premiere Pro, developed by [Deploy](https://github.com/DeployModule). Each plugin targets a specific area of post-production and is designed to work the way editors actually work, fast, configurable, and without unnecessary friction.
 
 All plugins run natively inside Premiere Pro using Adobe's **UXP** (Unified eXtensibility Platform), the modern replacement for legacy CEP extensions.
 
