@@ -26,6 +26,14 @@ The new preset is selected automatically and ready for you to add export configu
 3. Update the name or description.
 4. Click **Save**.
 
+## Duplicating a Preset
+
+1. Select the preset you want to copy from the dropdown.
+2. Click the **duplicate icon** (⎘), next to the pencil and **+** buttons.
+3. A copy is created (with all of the original's export configurations) and the editor opens on the new copy so you can rename it.
+
+This is the fastest way to build a variant of an existing delivery — duplicate it, then tweak the exports.
+
 ## Deleting a Preset
 
 1. Open the preset editor (pencil icon).

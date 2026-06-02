@@ -63,12 +63,13 @@ nav:
       - Sequence Selection: scrub/replace/sequence-selection.md
       - Execution Modes: scrub/replace/execution-modes.md
       - Results & Reports: scrub/replace/reports.md
-    - Template:
-      - scrub/template/index.md
-      - Create Tab: scrub/template/create-tab.md
-      - Rename Tab: scrub/template/rename-tab.md
-      - Naming Presets: scrub/template/naming-presets.md
-      - Organize Tab: scrub/template/organize-tab.md
+    - Prep:
+      - scrub/prep/index.md
+      - Create Tab: scrub/prep/create-tab.md
+      - Rename Tab: scrub/prep/rename-tab.md
+      - Naming Presets: scrub/prep/naming-presets.md
+      - Organize Tab: scrub/prep/organize-tab.md
+      - Trim Tab: scrub/prep/trim-tab.md
     - Conform:
       - scrub/conform/index.md
       - Prerequisites: scrub/conform/prerequisites.md

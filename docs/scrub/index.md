@@ -20,13 +20,13 @@
 
     [:octicons-arrow-right-24: Learn more](replace/index.md)
 
--   :page_facing_up:{ .lg .middle } **Template**
+-   :page_facing_up:{ .lg .middle } **Prep**
 
     ---
 
-    Create bins and sequences from saved presets, rename items with token-based naming templates, and organize your project.
+    Create bins and sequences from saved presets, rename items with token-based naming presets, organize your project, and trim source handles or strip disabled clips.
 
-    [:octicons-arrow-right-24: Learn more](template/index.md)
+    [:octicons-arrow-right-24: Learn more](prep/index.md)
 
 -   :clapper:{ .lg .middle } **Conform**
 

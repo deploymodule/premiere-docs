@@ -83,7 +83,7 @@ Check these conditions:
 
 ---
 
-## Template Module
+## Prep Module
 
 ### Naming preview shows "(preview unavailable)"
 

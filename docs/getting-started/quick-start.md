@@ -45,4 +45,4 @@ A green checkmark and success message appear when complete.
 
 - [Learn about Delivery Presets](../scrub/deliverables/delivery-presets.md) for reusable export workflows.
 - [Set up Track Selection](../scrub/deliverables/track-selection.md) to automate stem exports.
-- [Explore all four modules](../scrub/index.md) — Deliverables, Replace, Template, and Conform.
+- [Explore all four modules](../scrub/index.md) — Deliverables, Replace, Prep, and Conform.

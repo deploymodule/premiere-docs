@@ -26,6 +26,19 @@ A string appended to the sequence name in the output filename.
 
 A live preview is shown below the field.
 
+#### Suffix Tokens
+
+The suffix can include **tokens** that are resolved per sequence at export time. Click the **`{}`** button next to the suffix field to insert one:
+
+| Token | Resolves to | Example |
+|-------|-------------|---------|
+| `{date}` | Current date (uses your [date folder format](output-settings.md#supported-date-formats)) | `031026` |
+| `{fps}` | Sequence frame rate | `2397`, `25`, `30` |
+| `{width}` | Frame width | `1920` |
+| `{height}` | Frame height | `1080` |
+
+Tokens can be combined with literal text. For example, the suffix `_FULL_{date}` on sequence `EP01_Edit` produces `EP01_Edit_FULL_031026`. When the suffix contains tokens, the preview line reads **"Preview: SequenceName…"** with the tokens resolved; otherwise it shows the literal suffix appended to the sequence name.
+
 ### Export Preset
 
 Select an Adobe Media Encoder `.epr` preset from the dropdown. Presets are discovered from the folders configured in [Settings](settings.md).
@@ -36,6 +49,9 @@ Select an Adobe Media Encoder `.epr` preset from the dropdown. Presets are disco
 ### Track Selection
 
 Choose **All Tracks** or **Selected Tracks** for both video and audio independently. See [Track Selection](track-selection.md) for the full guide.
+
+!!! note "Batch export across multiple sequences"
+    When the export scope is set to **batch** (multiple sequences selected), the Export Editor shows the tracks of the *first* selected sequence and displays an info banner. Because track layouts can differ between sequences, use **Search for track strings** (in [Settings](settings.md)) so tracks are matched by name rather than by index across every sequence.
 
 ## Managing Exports
 

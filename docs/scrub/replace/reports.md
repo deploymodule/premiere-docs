@@ -40,7 +40,9 @@ A detailed table for each sequence group with columns:
 
 ## Render Limit
 
-If more than **100 instances** are found, only the first 100 are displayed. A hint appears: *"Showing first 100 instances. Export the TXT report for the full report."*
+To keep the results view responsive, the on-screen table is capped on two levels: at most **100 instances total**, and at most **50 instances per sequence**. The per-sequence cap stops a single large sequence from consuming the whole budget, so instances are distributed more evenly across sequences. When instances are hidden, a hint appears: *"Showing up to 100 instances total (max 50 per sequence). N hidden — export the TXT report for the full list."*
+
+These caps affect the on-screen table only — the exported TXT report always contains every instance.
 
 ## Exporting a Report
 

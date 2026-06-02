@@ -111,11 +111,16 @@ When both FFmpeg and AME are enabled, AME acts as a **fallback** for any clips t
 
 The preset dropdown shows all `.epr` files discovered from the system. Use **Browse** to manually select a preset file, or **Refresh** to rescan.
 
+The folders that are scanned for `.epr` files are managed from the **Export Preset Folders** section, which now appears inside the Conform settings modal as well. This list is shared with the Deliverables module, so adding a folder in one place makes those presets available in both. See [Deliverables → Settings](../deliverables/settings.md#export-preset-folders) for how to add, remove, and rescan preset folders.
+
 ### How It Works
 
 1. For each eligible clip, Scrub queues an export to Adobe Media Encoder.
 2. AME renders the clip using the selected preset.
 3. Output files are saved to the conform output folder.
+
+!!! note "Output container follows the preset"
+    The output file extension is taken from the preset itself rather than assumed — an H.264 preset produces `.mp4`, a DNxHR preset produces `.mxf`, an audio preset produces `.wav`, and so on. The generated FCP XML references the same actual filenames, so re-import resolves correctly.
 
 ---
 

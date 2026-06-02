@@ -46,7 +46,7 @@ Build a nested folder hierarchy for your output. Two types of segments:
 
 A live preview shows the computed path, e.g., `D:\Projects\07_Color\to Color\031026`.
 
-Use **+ Add folder** and **+ Add dated folder** to build your structure. Click **×** on any segment to remove it (and everything below it).
+Use **+ Add folder** and **+ Add dated folder** to build your structure. Click **×** on any segment to remove just that segment — the remaining segments keep their order.
 
 ### Sequence Name Suffix
 
@@ -78,6 +78,9 @@ Four checkboxes to enable/disable each export engine:
 | **Generate FCP XML** | On | Generate Final Cut Pro XML files |
 
 See [Export Engines](export-engines.md) for engine-specific settings.
+
+!!! info "Required settings are checked before the run starts"
+    When you start the conform run, Scrub first validates that the settings each enabled step needs are present. If anything is missing it shows an inline message — for example *"Configure required settings: output folder, AME export preset."* — instead of failing partway through the pipeline. Open the settings modal to fill in the listed items. Required settings are: an **output folder**; a **REDLINE path** if R3D-via-REDLINE is on; an **AME export preset** if AME rendering is on; and an **FFmpeg binary path** if FFmpeg trimming is on.
 
 ## Scanning
 

@@ -23,7 +23,7 @@ Video/
 
 1. Create your desired folder structure in Premiere Pro's Project Panel.
 2. Select the top-level bin(s) you want to capture.
-3. In the Template module's Create tab, click the **+** button in the Bin Preset section.
+3. In the Prep module's Create tab, click the **+** button in the Bin Preset section.
 4. Click **Save Bin(s)** in the modal to read the selected hierarchy.
 5. Enter a **Preset Name** (e.g., "Standard Project Folders").
 6. Click **Save**.
