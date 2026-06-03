@@ -70,6 +70,7 @@ nav:
       - Naming Presets: scrub/prep/naming-presets.md
       - Organize Tab: scrub/prep/organize-tab.md
       - Trim Tab: scrub/prep/trim-tab.md
+      - Settings Tab: scrub/prep/settings-tab.md
     - Conform:
       - scrub/conform/index.md
       - Prerequisites: scrub/conform/prerequisites.md

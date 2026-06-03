@@ -1,9 +1,9 @@
 # Prep
 
-The **Prep** module is a toolkit for getting a project and its timelines ready for the rest of your workflow. It provides four tabs: **Create** for building bins and sequences from saved presets, **Rename** for batch-renaming items with token-based naming presets, **Organize** for structuring project contents, and **Trim** for source-handle and disabled-clip cleanup on the timeline.
+The **Prep** module is a toolkit for getting a project and its timelines ready for the rest of your workflow. It provides five tabs: **Create** for building bins and sequences from saved presets, **Rename** for batch-renaming items with token-based naming presets, **Organize** for structuring project contents, **Trim** for source-handle and disabled-clip cleanup on the timeline, and **Settings** for batch-applying sequence settings across multiple sequences.
 
 !!! note "Formerly the Template module"
-    Prep is the successor to what earlier versions called the **Template** module. The Create, Rename, and Organize tabs carry over unchanged; the **Trim** tab is new. (Several experimental tools — Sort, Flatten, Timecode Sync, Close Gaps, and Normalize Durations — were removed, so the module now focuses on the operations that proved reliable.)
+    Prep is the successor to what earlier versions called the **Template** module. The Create, Rename, and Organize tabs carry over unchanged; the **Trim** and **Settings** tabs are new. (Several experimental tools — Sort, Flatten, Timecode Sync, Close Gaps, and Normalize Durations — were removed, so the module now focuses on the operations that proved reliable.)
 
 ## Tabs
 
@@ -13,6 +13,7 @@ The **Prep** module is a toolkit for getting a project and its timelines ready f
 | [**Rename**](rename-tab.md) | Rename selected items or the project file using naming presets |
 | [**Organize**](organize-tab.md) | Mirror folder structures, sort by date, clean up unused media |
 | [**Trim**](trim-tab.md) | Set source in/out handles on selected clips, and remove disabled (muted) track items |
+| [**Settings**](settings-tab.md) | Batch-apply sequence settings (frame size, sample rate, render flags) across multiple sequences |
 
 ## Templates
 
@@ -41,3 +42,4 @@ To create or rename a template, use the **+** or **pencil** buttons next to the 
 - [Naming Presets](naming-presets.md) — the token-based naming system in depth
 - [Organize Tab](organize-tab.md) — project cleanup tools
 - [Trim Tab](trim-tab.md) — source-handle trimming and disabled-clip removal
+- [Settings Tab](settings-tab.md) — batch sequence-settings changes
