@@ -9,6 +9,7 @@ Open the Deliverables settings by clicking the **gear icon** (:material-cog:) in
 | **Open output folder when export completes** | Off | Opens the output folder in your file explorer after a successful batch export. |
 | **Show notifications during export** | Off | Displays progress notifications during the export process. |
 | **Search for track strings** | Off | Enables the track filter field in the Export Editor. When on, typing a string auto-selects tracks whose names contain it. See [Track Selection](track-selection.md). |
+| **Batch: mirror Project Panel bin structure as sub-folders** | Off | In a batch export, routes each sequence into a sub-folder matching its bin hierarchy from the Project Panel. Root-level sequences go to the base path. See [Bin Structure Subfolders](output-settings.md#bin-structure-subfolders). |
 
 ## Date Folder Format
 
