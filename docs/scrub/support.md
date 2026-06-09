@@ -3,8 +3,8 @@
 ## Where to get help
 
 - **Documentation:** you're reading it. Use the search bar at the top, or jump to the [Scrub overview](index.md).
-- **Bug reports and feature requests:** email [zacsurprenant@gmail.com](mailto:zacsurprenant@gmail.com) with the details listed below.
-- **Email:** [zacsurprenant@gmail.com](mailto:zacsurprenant@gmail.com).
+- **Bug reports and feature requests:** email [hello@zacsurprenant.com](mailto:hello@zacsurprenant.com) with the details listed below.
+- **Email:** [hello@zacsurprenant.com](mailto:hello@zacsurprenant.com).
 
 Average response time: within 3 business days.
 

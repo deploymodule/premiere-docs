@@ -47,5 +47,5 @@ If this policy materially changes — for example, if a future Scrub version int
 
 ## Contact
 
-Privacy questions: [zacsurprenant@gmail.com](mailto:zacsurprenant@gmail.com).
+Privacy questions: [hello@zacsurprenant.com](mailto:hello@zacsurprenant.com).
 Support and documentation: [Support](support.md).
