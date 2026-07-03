@@ -108,7 +108,7 @@ ffmpeg -version
 
 ### After Installing
 
-In Scrub's Conform settings, click **Auto** next to the FFmpeg path field. Scrub will scan the default locations and fill in the path if found. If auto-detection fails, click **Browse** and navigate to the `ffmpeg` (macOS) or `ffmpeg.exe` (Windows) binary manually.
+In Scrub's Conform settings, connect the binary using **Auto** or **Browse** — see [Connecting the Binary to Scrub](#connecting-the-binary-to-scrub) below. On macOS the binary lives in a hidden folder, so you'll likely need the **⌘⇧G** Browse trick described there.
 
 ---
 
@@ -195,7 +195,60 @@ C:\Program Files\REDCINE-X PRO 64-bit\Redline.exe
 
 ### After Installing
 
-In Scrub's Conform settings, click **Auto** next to the REDLINE path field. Scrub checks all standard install locations automatically. If not found, click **Browse** and navigate to `REDline` (macOS) or `Redline.exe` (Windows) inside your REDCINE-X PRO installation.
+In Scrub's Conform settings, connect REDline using **Auto** or **Browse** — see [Connecting the Binary to Scrub](#connecting-the-binary-to-scrub) below. On macOS REDline is hidden *inside* the `REDCINE-X PRO.app` bundle, so you'll need the **⌘⇧G** Browse trick described there.
+
+---
+
+## Connecting the Binary to Scrub
+
+Once FFmpeg or REDCINE-X PRO is installed, you point Scrub at the binary in **Conform → Settings (the gear icon)**, next to the **FFmpeg** or **REDLINE** path field. There are two ways: **Auto** and **Browse**.
+
+### Auto-detect (try this first)
+
+Click **Auto**. Scrub scans the standard install locations and fills in the path if it can confirm the binary is there.
+
+!!! warning "Auto often can't see system folders — this is normal"
+    Premiere runs Scrub in a **sandbox** that is frequently blocked from reading `/Applications` (macOS) and `C:\Program Files` / `C:\ProgramData` (Windows). When that happens, **Auto reports "not found" even though the tool is correctly installed.** Don't worry — just use **Browse** instead (below). Scrub never overwrites a path you set manually, so a failed Auto will never erase a path you picked with Browse.
+
+### Browse — Windows
+
+1. Click **Browse**.
+2. Navigate to the binary and select it:
+    - **FFmpeg:** `C:\ffmpeg\bin\ffmpeg.exe` (or wherever you installed it)
+    - **REDline:** `C:\Program Files\REDCINE-X PRO 64-bit\Redline.exe`
+3. Scrub saves the path and remembers it between sessions.
+
+On Windows the file picker reaches these locations directly — no special steps needed.
+
+### Browse — macOS
+
+This is the part that trips most people up. macOS **hides** system folders like `/usr` and `/opt`, and it treats applications as **sealed bundles** — so the file picker **will not show** the FFmpeg or REDline binary if you just click around. Use **Go to Folder** instead:
+
+1. Click **Browse** — the macOS open dialog appears.
+2. Press **⌘ + Shift + G** (Go to Folder).
+3. Paste the **full path** to the binary:
+    - **FFmpeg (Intel Mac):** `/usr/local/bin/ffmpeg`
+    - **FFmpeg (Apple Silicon):** `/opt/homebrew/bin/ffmpeg`
+    - **REDline:** `/Applications/REDCINE-X Professional/REDCINE-X PRO.app/Contents/MacOS/REDline`
+4. Press **Return**, then **Open** to select the binary.
+
+!!! tip "REDline lives *inside* the app bundle"
+    On macOS, `REDCINE-X PRO` is an **application bundle**, and REDline sits *inside* it at `Contents/MacOS/REDline` — which Finder hides by default. The **⌘⇧G** path above goes straight to it. (In Finder you can also right-click **REDCINE-X PRO → Show Package Contents → Contents → MacOS** to see it.)
+
+    Not sure of the exact name or path on your machine? Run this in **Terminal** and use whatever it lists:
+
+    ```bash
+    ls -l "/Applications/REDCINE-X Professional/REDCINE-X PRO.app/Contents/MacOS/"
+    ```
+
+    If REDCINE-X PRO is installed somewhere non-standard, find REDline with:
+
+    ```bash
+    find /Applications -iname "REDline" 2>/dev/null
+    ```
+
+!!! note "Don't forget the Gatekeeper step"
+    After connecting REDline (or FFmpeg) on macOS, also run the one-time `xattr` quarantine-removal command from the Gatekeeper sections above — otherwise macOS may block Scrub from *calling* the binary even though the path is set correctly.
 
 ---
 
