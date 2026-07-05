@@ -19,7 +19,20 @@ Replaces only in sequences **you specify**. A selection panel appears:
 Each sequence shows its name and a red **×** button to remove it.
 
 !!! warning
-    If you select non-sequence items (bins, media files), an error message appears: *"Selected item(s) are not sequences."*
+    If you select non-sequence items (bins, media files), an error message appears: *"Selected item(s) are not sequences. Select sequences in Project Panel."*
+
+## What to Replace
+
+Below the scope options, a **What to replace** control picks which halves of a clip get swapped. This gates the scan — only the chosen halves are matched and replaced.
+
+| Option | Behavior |
+|--------|----------|
+| **Video + audio** *(default)* | Replace both the picture and its linked audio. |
+| **Video only** | Replace only the picture; keep the original audio. |
+| **Audio only** | Replace only the audio; keep the original picture. |
+
+!!! info "Linked clips are split"
+    For a linked A/V clip, Scrub processes the video and audio as **separate instances** (see [Execution Modes → Linked A/V](execution-modes.md#linked-av-clips)). The **What to replace** setting decides which of those instances are included.
 
 ## Validation
 

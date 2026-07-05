@@ -27,8 +27,10 @@ A detailed table for each sequence group with columns:
 | **Track** | Track label (e.g., "V1", "A3") |
 | **Start TC** | Timeline start timecode (clickable to copy) |
 | **End TC** | Timeline end timecode (clickable to copy) |
-| **Status** | Checkmark (ok/would-change) or X (failed) |
+| **Status** | Checkmark (ok/would-change/ready) or X (failed) |
 | **Notes** | Info button opening a modal with detailed notes |
+
+Each instance row also has a **Show per-track breakdown** toggle. Expanding it lists the clip's individual **video** and **audio channel** sub-rows — useful for linked A/V clips, whose halves are swapped as separate instances.
 
 ## Status Icons
 
@@ -48,10 +50,11 @@ These caps affect the on-screen table only — the exported TXT report always co
 
 Click the **Export** button in the results header to save a plain text (`.txt`) report via the file picker. The report includes:
 
-- Build stamp, timestamp, scope, and execution mode
+- Build stamp, timestamp, scope, and execution mode (including a **Scan-only** mode when you've scanned but not executed)
 - Each mapping with old/new paths and instance counts
-- Per-instance timecode, track, status, and notes
-- Summary totals (success, failed, skipped)
+- For **Offline/Online**, the **Relink path** and its **Path source** (where the new file was resolved from)
+- Per-instance timecode, track, status (including **Ready** and **SKIPPED (unchecked)**), and notes, with **video** / **audio channel** labels per track
+- Summary totals (ready, success, failed, skipped)
 
 ## Expand / Collapse
 

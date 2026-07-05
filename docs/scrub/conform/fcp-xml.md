@@ -37,27 +37,32 @@ When clip grouping splits clips into multiple groups, each group gets its own:
 
 ## Output Folder Structure
 
-The output folder is built from the **Output Base Path** plus the **Folder Structure** segments configured in the Settings modal.
+The output folder is built from the **Output Base Path**, plus the **Folder Structure** segments and the **Sub Folders** mode configured in the Settings modal.
 
 ### Default Structure Example
+
+With the default **Each Sequence as Sub Folders** mode, each conformed sequence gets its own named leaf folder:
 
 ```
 D:\Projects\                     ← Output Base Path
   └── 07_Color\                  ← Static folder
       └── to Color\              ← Static folder
           └── 031026\            ← Dated folder (MMDDYY)
-              ├── A001_CONFORM.xml
-              ├── A001_001.mov
-              ├── A001_002.mov
-              └── ...
+              └── A001\          ← Sub Folder (Each Sequence mode)
+                  ├── A001_CONFORM.xml
+                  ├── A001_001.mov
+                  ├── A001_002.mov
+                  └── ...
 ```
+
+Switching **Sub Folders** to *Mirror Project Panel Bin Structure* replaces the `A001\` leaf with the sequence's bin path; *None* drops the leaf entirely. See [Setup → Sub Folders](setup.md#sub-folders).
 
 ### Customizing the Structure
 
 In the Settings modal, build your folder hierarchy:
 
 - **Static folders** — fixed names like "07_Color", "Dailies", "Exports"
-- **Dated folders** — auto-named from the current date with format options: DDMM, DDMMYY, DDMMYYYY, MMDD, MMDDYY, MMDDYYYY, YYMMDD, YYYYMMDD
+- **Dated folders** — auto-named from the current date, with a choice of 13 date formats (`MMDD`, `MMDDYY`, `YYYYMMDD`, `YYYY-MM-DD`, `MMM DD YYYY`, and more — the same list used across Scrub)
 
 A live preview at the bottom shows the full computed path.
 

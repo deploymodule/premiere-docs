@@ -58,15 +58,22 @@ If auto-detection fails, click **Browse** to locate the executable manually.
 
 ### Auto-Detection
 
-Click **Auto** to search for FFmpeg:
+Click **Auto** to search for FFmpeg in standard install locations:
 
 === "Windows"
 
     - `C:\ffmpeg\bin\ffmpeg.exe`
+    - `C:\Program Files\ffmpeg\bin\ffmpeg.exe`
+    - `C:\Program Files (x86)\ffmpeg\bin\ffmpeg.exe`
+    - `C:\ProgramData\chocolatey\bin\ffmpeg.exe` (and Chocolatey's `lib\ffmpeg\tools\...` path)
 
 === "macOS"
 
-    - `/usr/local/bin/ffmpeg`
+    - `/opt/homebrew/bin/ffmpeg` (Apple Silicon Homebrew)
+    - `/usr/local/bin/ffmpeg` (Intel Homebrew)
+    - `/usr/bin/ffmpeg`
+
+If auto-detection fails (Premiere's sandbox often can't read system folders), click **Browse** to locate the executable manually.
 
 ### Trim Modes
 

@@ -1,23 +1,37 @@
 # Deliverables Settings
 
-Open the Deliverables settings by clicking the **gear icon** (:material-cog:) in the bottom-right of the Deliverables module.
+Open the Deliverables settings by clicking the **gear icon** (:material-cog:) in the bottom-right of the Deliverables module. The settings modal has three sections: **Output Location**, **Export**, and **Export Presets**.
 
-## Export Preferences
+## Output Location
+
+Set and build your output path here. This section is the single place to grant folder permission and shape the folder tree; the main Deliverables view only shows a read-only preview of the result.
+
+- **Browse** — pick the output base folder. A UXP file picker opens; selecting a folder grants Scrub write permission (a persistent token) and shows a green checkmark.
+- **Folder structure builder** — beneath the base path, add nested folder segments:
+    - **+ Add folder** — a fixed-name **static** folder (e.g. `07_Color`, `Exports`).
+    - **+ Add dated folder** — a folder auto-named from the current date, with a per-segment format dropdown (see [Supported Date Formats](output-settings.md#supported-date-formats)).
+- **Live preview** — a monospace line shows the full computed path as you build it.
+
+See [Output Settings](output-settings.md) for the full walkthrough and examples.
+
+## Export
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| **Open output folder when export completes** | Off | Opens the output folder in your file explorer after a successful batch export. |
 | **Show notifications during export** | Off | Displays progress notifications during the export process. |
 | **Search for track strings** | Off | Enables the track filter field in the Export Editor. When on, typing a string auto-selects tracks whose names contain it. See [Track Selection](track-selection.md). |
-| **Batch: mirror Project Panel bin structure as sub-folders** | Off | In a batch export, routes each sequence into a sub-folder matching its bin hierarchy from the Project Panel. Root-level sequences go to the base path. See [Bin Structure Subfolders](output-settings.md#bin-structure-subfolders). |
+| **Sub Folders** | Each Sequence as Sub Folders | A dropdown controlling where each export file is placed under the output path. Applies to **both** Selected and Batch scope. See [Sub Folders](output-settings.md#sub-folders). |
 
-## Date Folder Format
+### Sub Folders modes
 
-Controls the date format used when **Add date folder** is enabled.
+| Mode | Result |
+|------|--------|
+| **Each Sequence as Sub Folders** *(default)* | Each sequence's exports go into a `‹SequenceName›/` sub-folder. |
+| **Mirror Project Panel Bin Structure As Sub Folders** | Each sequence routes into a sub-folder matching its bin (folder) hierarchy in the Project panel. |
+| **None** | All exports land directly under the output path with no sub-folder. |
 
-- **Format dropdown** — Choose from 9 date formats (see [Output Settings](output-settings.md#supported-date-formats) for the full list).
-- **Live preview** — Shows today's date in the selected format.
-- **Add date folder checkbox** — Toggles date subfolder creation on or off.
+!!! info "Default date format"
+    New dated folder segments and the `{date}` suffix token both use Scrub's default date format. There is no separate "Add date folder" checkbox — date folders are just dated segments you add in the folder builder above.
 
 ## Export Preset Folders
 

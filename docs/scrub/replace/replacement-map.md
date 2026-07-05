@@ -9,7 +9,7 @@ A toggle in the top-left switches between two sources for selecting media:
 | Source | Icon | Description |
 |--------|------|-------------|
 | **Project Panel** | :material-folder: | Reads items selected in the Premiere Pro Project Panel |
-| **Timeline** | :material-movie-open: | Reads clips selected on the active timeline |
+| **Active Sequence** | :material-movie-open: | Reads clips selected on the active timeline (the toggle tooltip still reads "Timeline") |
 
 ## Adding Entries
 

@@ -13,8 +13,8 @@ graph LR
     E --> F[Files Queued to AME]
 ```
 
-1. **Load your sequence** — click Refresh to detect the active sequence.
-2. **Set an output folder** — click Browse to grant file write permission.
+1. **Choose your scope** — the **Selected / Batch** toggle picks either the sequence selected in the Project panel (click **↻** to refresh) or a batch of sequences you add with the **+** button.
+2. **Set an output folder** — click **Edit** on the Output Location preview (or the gear icon → Output Location) to browse for a folder and grant write permission.
 3. **Select a Delivery Preset** — or create a new one with the **+** button.
 4. **Configure exports** — add one or more export configurations, each with its own preset, suffix, and track selection.
 5. **Export** — Scrub queues each enabled export to Adobe Media Encoder.

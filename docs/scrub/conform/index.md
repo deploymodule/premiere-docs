@@ -13,10 +13,13 @@ graph LR
     C --> D[Step 4: Complete]
 ```
 
-1. **[Setup](setup.md)** — Configure handles, merge gap, mode, and export settings. Scan the active sequence.
+1. **[Setup](setup.md)** — Choose your sequence (or a **batch** of sequences), configure handles, merge gap, mode, and export settings, then scan.
 2. **Preview** — Review the flat clip list, check for offline clips and clip groups.
 3. **Running** — Real-time progress through each pipeline phase.
-4. **Complete** — Summary of results, warnings, and output file paths.
+4. **Complete** — Summary of results, warnings, and output file paths (a per-sequence summary in batch runs).
+
+!!! tip "Single or batch"
+    Conform works on the sequence selected in the Project panel, or on a **batch** of sequences processed one after another. See [Choosing the Sequence](setup.md#choosing-the-sequence).
 
 ## Pipeline Modes
 

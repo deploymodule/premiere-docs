@@ -29,8 +29,9 @@ See [Execution Modes](execution-modes.md) for full details on each mode.
 ## Key Features
 
 - **Batch processing** — Replace media across all sequences or a selected subset.
-- **Clip preservation** — In Replace mode, effects, keyframes, markers, transitions, and label colors are preserved and reapplied to the new clips.
-- **Linked A/V handling** — Video and audio components of linked clips are handled separately for maximum reliability.
+- **Clip preservation** — In Replace (and Neighbor) mode, effects, keyframes, markers, transitions, and label colors are preserved and reapplied to the new clips.
+- **Video / audio targeting** — A **What to replace** control swaps both halves, video only, or audio only.
+- **Linked A/V handling** — Video and audio of a linked clip are split into separate instances and swapped independently. Complex multi-audio layouts are skipped with a note rather than corrupted.
 - **Validation** — Scans verify clip identity using canonical keys, stable IDs, and normalized file paths.
 - **Reporting** — Detailed results with per-instance status, exportable to a text report.
 

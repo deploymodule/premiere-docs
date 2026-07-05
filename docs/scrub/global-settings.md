@@ -17,7 +17,7 @@ Share your Scrub configuration between machines or team members.
 | Category | Details |
 |----------|---------|
 | **Delivery Presets** | All presets with their export configurations |
-| **App Preferences** | Date format, notifications, folder-on-complete, date folder toggle, output folder structure, track string search, built-in presets toggle |
+| **App Preferences** | Date format, notifications, output folder structure, sub-folder mode, track string search, built-in presets toggle |
 | **Naming Choice Options** | Custom choice options from the Prep module's naming system |
 
 ### What's Excluded

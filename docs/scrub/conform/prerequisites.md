@@ -29,7 +29,7 @@ Then install FFmpeg:
 brew install ffmpeg
 ```
 
-Homebrew installs the binary to `/usr/local/bin/ffmpeg` (Intel) or `/opt/homebrew/bin/ffmpeg` (Apple Silicon). Scrub auto-detects `/usr/local/bin/ffmpeg` — if you're on Apple Silicon, use **Browse** in the Conform settings to point to the correct path.
+Homebrew installs the binary to `/usr/local/bin/ffmpeg` (Intel) or `/opt/homebrew/bin/ffmpeg` (Apple Silicon). Scrub's **Auto** detection checks **both** locations, so a standard Homebrew install is found on Intel and Apple Silicon alike. If Auto can't reach the folder (Premiere's sandbox sometimes blocks it), use **Browse** to point to the path shown by `which ffmpeg`.
 
 **Verify the installation:**
 

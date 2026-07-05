@@ -2,38 +2,42 @@
 
 ## Output Folder
 
-Click **Browse** to select an output folder. A UXP file picker opens — select any folder on your system. Once selected:
+The main Deliverables view shows a read-only **Output Location** preview: the computed output path in monospace, a **✓** (write permission granted) or **⚠** (permission missing) badge, and an **Edit** button.
 
-- A **green checkmark** confirms write permission.
-- The **path preview** shows the full output path in monospace text.
+Click **Edit** (or the gear icon → **Output Location**) to set and build the path in [Settings](settings.md):
+
+- **Browse** — pick the output base folder. Selecting a folder grants Scrub write permission and updates the badge to **✓**.
+- **Folder structure builder** — add static and dated folder segments beneath the base path (see [Folder Structure](#folder-structure)).
 
 !!! info "Why do I need to browse?"
     UXP requires explicit file system permission via a persistent token. The Browse action creates this token, granting Scrub write access to the folder across sessions.
 
-If you haven't browsed yet, the Export button shows a warning: *"Click Browse in Output Location to grant write permission."*
+If you haven't granted permission yet, the Edit button turns primary and the Export button shows a warning to set the output location in Settings.
 
-## Date Folders
+## Folder Structure
 
-When **Add date folder** is enabled (in [Settings](settings.md)), Scrub creates a date-stamped subfolder inside the output directory.
+In **Settings → Output Location**, build a nested folder tree beneath the base path. Two segment types:
 
-| Date Format | Example Folder |
-|-------------|----------------|
-| `MMDDYY` | `031026/` |
-| `YYYYMMDD` | `20260310/` |
-| `YYYY-MM-DD` | `2026-03-10/` |
-| `MMM DD YYYY` | `Mar 10 2026/` |
+| Segment | Button | Description |
+|---------|--------|-------------|
+| **Static folder** | **+ Add folder** | A fixed-name folder (e.g. `07_Color`, `Exports`). |
+| **Dated folder** | **+ Add dated folder** | A folder auto-named from the current date, with a per-segment format dropdown. |
 
-The path preview updates in real time to show the full path including the date subfolder.
+A live preview shows the full computed path as you build it, and the path preview on the main view updates to match. (There is no longer a single "Add date folder" checkbox — a date folder is just a dated segment.)
 
-## Bin Structure Subfolders
+## Sub Folders
 
-When **Batch: mirror Project Panel bin structure as sub-folders** is enabled (in [Settings](settings.md)), a **batch** export routes each sequence into a sub-folder that matches its **bin (folder) hierarchy in the Project Panel**, created beneath the output folder.
+The **Sub Folders** dropdown (in [Settings](settings.md) → Export) controls where each export file is placed *under* the output path. It applies to **both** Selected (single-sequence) and Batch exports. Three modes:
 
-This only applies to **batch** exports (multiple sequences). Single-sequence exports are unaffected.
+| Mode | Result |
+|------|--------|
+| **Each Sequence as Sub Folders** *(default)* | Each sequence's exports go into a `‹SequenceName›/` sub-folder. |
+| **Mirror Project Panel Bin Structure As Sub Folders** | Each sequence routes into a sub-folder matching its **bin (folder) hierarchy** in the Project panel. |
+| **None** | All exports land directly under the output path, with no sub-folder. |
 
-### Example
+### Mirror Bin example
 
-With output base `D:\Deliveries` and this Project Panel structure:
+With output base `D:\Deliveries`, **Mirror Bin** mode, and this Project panel structure:
 
 ```
 Project
@@ -43,38 +47,42 @@ Project
      └── Reel_A   (sequence)
 ```
 
-A batch export with the toggle **on** writes:
+the export writes:
 
 ```
 D:\Deliveries\01_Promos\Spot_30_MASTER.mov
 D:\Deliveries\02_Social\Reel_A_MASTER.mov
 ```
 
-With the toggle **off** (the default), both files land directly in `D:\Deliveries\`.
-
 ### Behavior notes
 
-- **Root-level sequences** — a sequence that sits at the project root (no enclosing bin) always exports to the base path, whether the toggle is on or off. No stray folder is created for it.
-- **Nested bins** — the full bin chain is mirrored, outermost folder first. Deeply nested sequences get the complete folder path.
-- **Illegal characters** — bin names are sanitized for the file system. Characters that are illegal on Windows or macOS (`<>:"/\|?*`) are stripped, so a bin named `A/B` or `My:Seq` produces a safe folder name and never escapes the output path.
-- **Export-time accuracy** — the bin path is read at export time, so if you move a sequence to a different bin after adding it to the batch, the export uses its **current** location.
-- **Duplicate names** — sequences that share a name but live in different bins are naturally separated into different folders, avoiding the file collision they would have in a flat batch.
-- **Date folders** — if **Add date folder** is also enabled, the date folder is applied first and bin subfolders are created beneath it.
+- **Root-level sequences** — in Mirror Bin mode, a sequence at the project root (no enclosing bin) exports to the base path with no stray folder.
+- **Nested bins** — the full bin chain is mirrored, outermost folder first.
+- **Illegal characters** — bin and sequence names are sanitized for the file system. Characters that are illegal on Windows or macOS (`<>:"/\|?*`) are stripped, so a bin named `A/B` or `My:Seq` produces a safe folder name and never escapes the output path.
+- **Export-time accuracy** — bin paths are read at export time, so moving a sequence to a different bin after adding it to a batch uses its **current** location.
+- **Duplicate names** — sequences that share a name but live in different bins land in different folders. Where two output files would still collide in one run (e.g. flat **None** mode with same-named sequences), Scrub auto-suffixes the filename (`_2`, `_3`, …) to avoid overwriting.
+- **Date folders** — dated folder segments are applied first; sub-folders are created beneath them.
 
 ### Batch list breadcrumbs
 
-When the toggle is on, the batch sequence list shows a muted breadcrumb (e.g. `01_Promos /`) above each sequence name so you can see where each file will land. With the toggle off, the list looks unchanged.
+In **Batch** scope with Mirror Bin mode, the batch sequence list shows a muted breadcrumb (e.g. `01_Promos /`) above each sequence name so you can see where each file will land.
 
 !!! tip "Refresh after moving bins"
-    Moving a sequence between bins in the Project Panel does not automatically refresh the batch list breadcrumbs. Click the **↻ refresh** button next to the Batch/Active toggle to re-read the current name and bin path for every sequence in the batch. (The export itself always uses the current bin path regardless of the displayed breadcrumb.)
+    Moving a sequence between bins in the Project panel does not automatically refresh the displayed breadcrumbs. Click the **↻ refresh** button next to the Selected/Batch toggle to re-read each sequence's current name and bin path. (The export itself always uses the current bin path regardless of the displayed breadcrumb.)
 
 ### Supported Date Formats
 
+Dated folder segments and the `{date}` [suffix token](export-configs.md#suffix-tokens) share the same 13 formats:
+
 | Format | Example |
 |--------|---------|
+| MMDD | 0310 |
+| DDMM | 1003 |
 | MMDDYY | 031026 |
 | DDMMYY | 100326 |
 | YYMMDD | 260310 |
+| MMDDYYYY | 03102026 |
+| DDMMYYYY | 10032026 |
 | YYYYMMDD | 20260310 |
 | YYYY-MM-DD | 2026-03-10 |
 | MM-DD-YYYY | 03-10-2026 |
@@ -103,6 +111,9 @@ With sequence "EP01_FinalCut", suffix "_DLG", and an H.264 preset:
 ```
 EP01_FinalCut_DLG.mp4
 ```
+
+!!! note "Collision protection"
+    If two outputs in a single export run would resolve to the same filename in the same folder (case-insensitively) — for example same-named sequences batched with **Sub Folders** set to *None* — Scrub appends `_2`, `_3`, … before the extension so nothing is overwritten. The queued item is flagged as *renamed to avoid overwrite*.
 
 ## Folder Permission Modal
 
