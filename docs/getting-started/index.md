@@ -7,7 +7,7 @@ This section walks you through installing Scrub and running your first batch exp
 Before installing Scrub, make sure you have:
 
 - **Adobe Premiere Pro 25.6** or later installed
-- **UXP Developer Tools (UDT) v2.2+** — download from the [Adobe Developer Console](https://developer.adobe.com/developer-distribution/creative-cloud/docs/guides/UXP_for_Premiere_Pro/getting-started/prerequisites/)
+- **Adobe Creative Cloud Desktop** app installed and signed in (used to install the plugin)
 - A supported operating system: **Windows 10/11** or **macOS 13+**
 
 ## Next Steps
@@ -16,7 +16,7 @@ Before installing Scrub, make sure you have:
 
 -   [:octicons-download-24: **Installation**](installation.md)
 
-    Step-by-step guide to loading Scrub into Premiere Pro.
+    Step-by-step guide to installing Scrub into Premiere Pro.
 
 -   [:octicons-rocket-24: **Quick Start**](quick-start.md)
 

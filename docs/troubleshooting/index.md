@@ -4,23 +4,24 @@ Common issues and their solutions when using Scrub.
 
 ## Installation & Loading
 
-### Panel doesn't appear in Extensions menu
+### Scrub doesn't appear under Window → UXP Plugins
 
 - Verify you're running **Premiere Pro 25.6** or later (UXP support is required).
-- Make sure UXP Developer Tools is **v2.2+**.
-- Try running UDT as Administrator (Windows).
-- Confirm `manifest.json` is correctly loaded in UDT.
+- Fully quit and reopen Premiere Pro after installing the `.ccx`.
+- Confirm the install finished: Scrub should be listed in the **Plugins** section of the Creative Cloud Desktop app.
+- If double-clicking the `.ccx` didn't launch Creative Cloud, install it manually with Adobe's Unified Plugin Installer Agent (UPIA) — see [Installation](../getting-started/installation.md).
+- If it still doesn't appear, enable **Developer Mode** under Premiere Pro's **Settings → Plugins** preferences, then restart Premiere.
 
 ### Panel appears but shows blank/white
 
-- Check that the plugin was built with `format: "iife"` (not `"es"`). ES modules are not supported by UXP.
-- Open the UDT console to check for JavaScript errors.
-- Try clicking **Reload** in UDT.
+- Fully quit and relaunch Premiere Pro.
+- Reinstall the latest `.ccx` from your [Gumroad](https://zachanot.gumroad.com/l/scrub) library in case the download was incomplete.
+- Confirm you're on **Premiere Pro 25.6** or later.
 
-### Panel loads but no content renders
+### Still having trouble?
 
-- Check the browser console in UDT for error messages.
-- Verify `manifest.json` has `manifestVersion: 6` and correct host configuration.
+- Reinstall the newest version from Gumroad — it replaces the existing install in place.
+- If the problem persists, [contact support](../scrub/support.md) with your Premiere Pro version and OS.
 
 ---
 
@@ -149,8 +150,8 @@ Settings are stored in `localStorage`, which persists across plugin reloads. How
 
 ### File picker doesn't open
 
-- This is a UXP permission issue. Try reloading the plugin in UDT.
-- On Windows, run UDT as Administrator.
+- This is a UXP permission issue. Fully quit and reopen Premiere Pro.
+- On Windows, try launching Premiere Pro as Administrator.
 - On macOS, check that Premiere Pro has Full Disk Access in System Preferences → Privacy & Security.
 
 ### Cross-platform issues (Windows ↔ macOS)

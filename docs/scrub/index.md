@@ -2,6 +2,13 @@
 
 **Scrub** is a UXP panel plugin for Adobe Premiere Pro that bundles four post-production modules into a single interface. It replaces scattered manual workflows with batch operations, smart defaults, and team-shareable configurations.
 
+<script src="https://gumroad.com/js/gumroad.js"></script>
+<div class="gumroad-product-embed">
+  <a href="https://zachanot.gumroad.com/l/scrub">Loading…</a>
+</div>
+
+[Installation guide :octicons-arrow-right-24:](../getting-started/installation.md){ .md-button }
+
 <div class="grid cards" markdown>
 
 -   :package:{ .lg .middle } **Deliverables**
@@ -54,7 +61,7 @@
 
 - **Adobe Premiere Pro 25.6** or later (UXP support required)
 - **Windows 10/11** or **macOS 13+**
-- **UXP Developer Tools v2.2+** (for loading the plugin during development)
+- **Adobe Creative Cloud Desktop** app (used to install the plugin)
 
 ---
 

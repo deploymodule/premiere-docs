@@ -12,6 +12,8 @@ Professional UXP plugins for Adobe Premiere Pro — built for editors, agencies,
 
     [:octicons-arrow-right-24: View Scrub docs](scrub/index.md)
 
+    [Get Scrub :material-cart:](https://zachanot.gumroad.com/l/scrub){ .md-button .md-button--primary }
+
 </div>
 
 ---
